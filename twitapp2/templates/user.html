@@ -1,0 +1,38 @@
+{#
+<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#
+
+<head>#}
+    {#
+    <meta charset="UTF-8">#}
+    {# <title>User</title>#}
+    {#
+</head>#}
+{#
+
+<body>#}
+    {#<h1>{{ title }}'s Tweets:</h1>#}
+    {#<p>{{ message }}</p>#}
+    {#<div id="user-tweets">#}
+        {# {% for tweet in tweets %}#}
+        {# <p>{{ tweet.text }}</p>#}
+        {# {% endfor %}#}
+        {#</div>#}
+    {#</body>#}
+{% extends "base.html" %}
+
+{% block content %}
+<div id="user-info">
+    <p>{{ title }}</p>
+    <p>{{ message }}</p>
+</div>
+
+<div id="user-tweets">
+    {% for tweet in tweets %}
+    <span class="stack">
+        {{ tweet.text }}
+    </span>
+    {% endfor %}
+</div>
+{% endblock %}
